@@ -53,18 +53,9 @@ A modern, full-stack book review platform built with Next.js 15, TypeScript, Tai
 
 ## 🎯 Demo Credentials
 
-For quick testing, you can use these demo accounts:
-
-### Demo Users
 ```
-📧 Email: demo@bookreview.com
-🔒 Password: demo123
-
-📧 Email: reader@bookreview.com  
-🔒 Password: reader123
-
-📧 Email: bookworm@bookreview.com
-🔒 Password: bookworm123
+📧 Email: shivamydv.work@gmail.com
+🔒 Password: 123456789
 ```
 
 ### What's Included

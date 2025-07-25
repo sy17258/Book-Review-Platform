@@ -111,7 +111,9 @@ export default function Login() {
         
         <div className="text-center">
           <p className="text-sm text-gray-600">
-            Demo credentials: Use any email and password to login
+            credentials: Use provided email and password to login
+            📧 Email: shivamydv.work@gmail.com
+            🔒 Password: 123456789
           </p>
         </div>
       </div>
