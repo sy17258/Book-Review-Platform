@@ -13,6 +13,7 @@ export async function generateStaticParams() {
   ];
 }
 
-export default function BookPage({ params }: { params: { id: string } }) {
-  return <BookDetail bookId={params.id} />;
+export default async function BookPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  return <BookDetail bookId={id} />;
 }
