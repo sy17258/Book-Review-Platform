@@ -19,7 +19,7 @@ A modern, full-stack book review platform built with Next.js 15, TypeScript, Tai
 
 <br/><br/>
 
-[![Watch Demo](https://img.shields.io/badge/▶️%20Watch%20Full%20Demo-FF0000?style=for-the-badge&logo=youtube&logoColor=white&labelColor=000000)](https://drive.google.com/file/d/1zUY-ZandkWNWGga2VbmzdRrKt-YBl57W/view?usp=sharing)
+[![Watch Demo](https://img.shields.io/badge/▶️%20Watch%20Full%20Demo-FF0000?style=for-the-badge&logo=youtube&logoColor=white&labelColor=000000)](https://drive.google.com/file/d/1zUY-ZandkWNWGga2VbmzdRrKt-YBl57W/view)
 
 </div>
 
