@@ -83,26 +83,44 @@ export const authAPI = {
       if (error) throw error;
       
       if (user) {
-        // Get user profile from our custom users table
+        // Try to get user profile from our custom users table
         try {
           const profile = await usersAPI.getUser(user.id);
           return {
             id: user.id,
             email: user.email || '',
-            name: profile?.name || '',
+            name: profile?.name || user.email?.split('@')[0] || 'User',
           };
         } catch (profileError) {
-          return {
+          // Fallback: create a user profile from auth data
+          const fallbackUser = {
             id: user.id,
             email: user.email || '',
-            name: user.email?.split('@')[0] || '',
+            name: user.email?.split('@')[0] || 'User',
           };
+          
+          // Try to create the user profile for future use
+          try {
+            await usersAPI.createUser(fallbackUser);
+          } catch (createError) {
+            // Ignore create errors - table might not exist
+          }
+          
+          return fallbackUser;
         }
+      }
+      
+      // Check localStorage fallback
+      const localUser = getCurrentUser();
+      if (localUser) {
+        return localUser;
       }
       
       return null;
     } catch (error) {
-      return null;
+      // Final fallback - check localStorage
+      const localUser = getCurrentUser();
+      return localUser || null;
     }
   }
 };
@@ -164,10 +182,25 @@ export const useAuthState = () => {
     async signIn(email: string, password: string) {
       const result = await authAPI.login({ email, password });
       if (result.user) {
-        const userProfile = await authAPI.getCurrentUser();
-        if (userProfile) {
-          setCurrentUser(userProfile);
-          setAuthToken(result.session?.access_token || 'supabase-session');
+        // Create user profile data
+        const userProfile = {
+          id: result.user.id,
+          email: result.user.email || email,
+          name: result.user.email?.split('@')[0] || 'User',
+        };
+        
+        // Store in localStorage immediately
+        setCurrentUser(userProfile);
+        setAuthToken(result.session?.access_token || 'supabase-session');
+        
+        // Try to get/create the full profile
+        try {
+          const fullProfile = await authAPI.getCurrentUser();
+          if (fullProfile) {
+            setCurrentUser(fullProfile);
+          }
+        } catch (error) {
+          // Use the basic profile we already set
         }
       }
       return result;

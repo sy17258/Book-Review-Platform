@@ -31,6 +31,8 @@ export default function Login() {
       if (formData.email && formData.password) {
         await auth.signIn(formData.email, formData.password);
         toast.success('Login successful!');
+        
+        // Navigate to books page
         router.push('/books');
       } else {
         toast.error('Please fill in all fields');

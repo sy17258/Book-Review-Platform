@@ -10,9 +10,12 @@ export default function Header() {
   const router = useRouter();
   const [user, setUser] = useState<any>(null);
   const [isAuth, setIsAuth] = useState(false);
+  const [isClient, setIsClient] = useState(false);
   const auth = useAuthState();
 
   useEffect(() => {
+    setIsClient(true);
+    
     const checkAuth = async () => {
       const authStatus = isAuthenticated();
       setIsAuth(authStatus);
@@ -25,7 +28,24 @@ export default function Header() {
       }
     };
 
+    // Check auth status immediately
     checkAuth();
+
+    // Set up an interval to check auth status periodically
+    const authCheckInterval = setInterval(checkAuth, 1000);
+
+    // Also listen for storage changes (for cross-tab sync)
+    const handleStorageChange = () => {
+      checkAuth();
+    };
+
+    window.addEventListener('storage', handleStorageChange);
+
+    // Cleanup
+    return () => {
+      clearInterval(authCheckInterval);
+      window.removeEventListener('storage', handleStorageChange);
+    };
   }, []);
 
   const handleLogout = async () => {
@@ -59,7 +79,13 @@ export default function Header() {
           </nav>
 
           <div className="flex items-center space-x-4">
-            {isAuth ? (
+            {!isClient ? (
+              // Skeleton loader to prevent hydration mismatch
+              <div className="flex items-center space-x-4">
+                <div className="w-16 h-8 bg-gray-200 rounded animate-pulse"></div>
+                <div className="w-20 h-8 bg-gray-200 rounded animate-pulse"></div>
+              </div>
+            ) : isAuth ? (
               <>
                 <span className="text-gray-600">Welcome, {user?.name}</span>
                 <button

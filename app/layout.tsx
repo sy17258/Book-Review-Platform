@@ -33,14 +33,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning={true}>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} ${pacifico.variable} antialiased bg-gray-50`}
-      >
+    <html lang="en" className="hydrated">
+      <body className={`${geistSans.variable} ${geistMono.variable} ${pacifico.variable} antialiased bg-gray-50`}>
         <Header />
-        <main className="min-h-screen">
-          {children}
-        </main>
+        {children}
         <Toaster position="top-right" />
       </body>
     </html>

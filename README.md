@@ -7,6 +7,12 @@ A modern, full-stack book review platform built with Next.js 15, TypeScript, Tai
 ![Supabase](https://img.shields.io/badge/Supabase-Database-green?style=flat&logo=supabase)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-38B2AC?style=flat&logo=tailwind-css)
 
+## 🎥 Demo Video
+
+[![Demo Video](https://img.shields.io/badge/▶️-Watch%20Demo%20Video-red?style=for-the-badge&logo=youtube)](https://drive.google.com/file/d/1zUY-ZandkWNWGga2VbmzdRrKt-YBl57W/view?usp=sharing)
+
+> 🎬 **Watch the complete walkthrough** of the Book Review Platform showcasing all features including user authentication, book browsing, review system, and book management.
+
 ## ✨ Features
 
 - 📖 **Book Management** - Browse, search, and filter books
@@ -73,20 +79,25 @@ A modern, full-stack book review platform built with Next.js 15, TypeScript, Tai
 
 *Note: Demo accounts are reset periodically to maintain clean test data.*
 
-## �️ Project Structure
+## 🏗️ Project Structure
 
 ```
 ├── app/                    # Next.js app directory
 │   ├── books/             # Book pages
 │   ├── login/             # Authentication
+│   ├── signup/            # User registration
 │   └── add-book/          # Add new books
 ├── components/            # Reusable UI components
+│   ├── BookCard.tsx       # Book display component
+│   ├── Header.tsx         # Navigation header
+│   ├── Pagination.tsx     # Page navigation
+│   └── StarRating.tsx     # Rating component
 ├── lib/                   # Utilities and API
 │   ├── api.ts            # Supabase API functions
 │   ├── auth.ts           # Authentication
 │   └── supabase.ts       # Database config
-├── database/             # Database schema
-└── scripts/              # Setup scripts
+└── database/             # Database schema
+    └── schema.sql        # Database structure
 ```
 
 ## 🗄️ Database Schema
@@ -120,7 +131,7 @@ The project is pre-configured with:
 - **Deployment**: Ready for Vercel
 - **Fallback System**: Uses mock data if database isn't set up
 
-## � Deployment
+## 🚀 Deployment
 
 ### Vercel (Recommended)
 1. Push to GitHub
@@ -142,13 +153,12 @@ npm run build
 | Tailwind CSS | Styling |
 | React Hot Toast | Notifications |
 
-## 📝 Scripts
+## 📝 Available Scripts
 
 ```bash
 npm run dev          # Start development server
 npm run build        # Build for production
 npm run lint         # Run ESLint
-npm run setup        # Setup database (optional)
 ```
 
 ## 🤝 Contributing
@@ -159,7 +169,7 @@ npm run setup        # Setup database (optional)
 4. Push to branch (`git push origin feature/new-feature`)
 5. Open Pull Request
 
-## � License
+## 📄 License
 
 This project is open source and available under the [MIT License](LICENSE).
 
