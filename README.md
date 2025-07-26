@@ -63,7 +63,16 @@ A modern, full-stack book review platform built with Next.js 15, TypeScript, Tai
    npm install
    ```
 
-3. **Setup database** (Optional for demo)
+3. **Environment setup**
+   ```bash
+   # Copy the example environment file
+   cp .env.example .env.local
+   
+   # The project is pre-configured with demo Supabase credentials
+   # For your own setup, edit .env.local with your Supabase project details
+   ```
+
+4. **Setup database** (Optional for demo)
    - The app will work with mock data if database isn't set up
    - For full functionality:
      - Go to your Supabase dashboard
@@ -71,12 +80,12 @@ A modern, full-stack book review platform built with Next.js 15, TypeScript, Tai
      - Copy and paste contents of `database/schema.sql`
      - Execute the SQL script
 
-4. **Start development server**
+5. **Start development server**
    ```bash
    npm run dev
    ```
 
-5. **Open your browser**
+6. **Open your browser**
    Visit [http://localhost:3000](http://localhost:3000)
 
 ## 🎯 Demo Credentials
