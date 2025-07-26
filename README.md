@@ -9,9 +9,31 @@ A modern, full-stack book review platform built with Next.js 15, TypeScript, Tai
 
 ## 🎥 Demo Video
 
-[![Demo Video](https://img.shields.io/badge/▶️-Watch%20Demo%20Video-red?style=for-the-badge&logo=youtube)](https://drive.google.com/file/d/1zUY-ZandkWNWGga2VbmzdRrKt-YBl57W/view?usp=sharing)
+<div align="center">
+  
+### 📹 **Full Platform Walkthrough**
 
-> 🎬 **Watch the complete walkthrough** of the Book Review Platform showcasing all features including user authentication, book browsing, review system, and book management.
+<a href="https://drive.google.com/file/d/1zUY-ZandkWNWGga2VbmzdRrKt-YBl57W/view?usp=sharing" target="_blank">
+  <img src="https://via.placeholder.com/720x405/1a1a1a/ffffff?text=📚+Book+Review+Platform+Demo+▶️+CLICK+TO+WATCH" alt="Demo Video Thumbnail" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);"/>
+</a>
+
+<br/><br/>
+
+[![Watch Demo](https://img.shields.io/badge/▶️%20Watch%20Full%20Demo-FF0000?style=for-the-badge&logo=youtube&logoColor=white&labelColor=000000)](https://drive.google.com/file/d/1zUY-ZandkWNWGga2VbmzdRrKt-YBl57W/view?usp=sharing)
+
+</div>
+
+### 🎯 **What's in the Demo:**
+| Feature | Description |
+|---------|-------------|
+| 🔐 **Authentication** | Complete login/signup flow |
+| 📚 **Book Catalog** | Browse and search books |
+| ⭐ **Review System** | Rate and review books |
+| ➕ **Add Books** | Add new books to platform |
+| 📱 **Responsive UI** | Mobile-first design showcase |
+| 🎨 **Modern Design** | Tailwind CSS styling |
+
+---
 
 ## ✨ Features
 
